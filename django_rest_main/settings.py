@@ -103,3 +103,16 @@ CLOUDINARY_STORAGE = {
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+# Cloudinary settings
+CLOUDINARY_URL = "cloudinary://124289597836564:bLNx_qYDRpsScgJ2he3jDSsiXR8@dza2rlywk"
+
+cloudinary.config(
+    cloud_name="dza2rlywk",
+    api_key="124289597836564",
+    api_secret="bLNx_qYDRpsScgJ2he3jDSsiXR8"
+)
