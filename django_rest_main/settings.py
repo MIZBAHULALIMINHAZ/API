@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-q2rlhd4yq$y^^n2*0eun4ggdh7t6b@o)yqjl3b=(^o#8-0cgzs
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
+
 
 
 # Application definition
@@ -79,6 +81,10 @@ WSGI_APPLICATION = 'django_rest_main.wsgi.application'
 import os
 import dj_database_url
 
+# Set the DATABASE_URL directly for Render PostgreSQL database
+os.environ.setdefault('DATABASE_URL', 'postgresql://tools_project_api_user:lDM2V72dzlg4UvL0SjyeJ8ahS6O2NMqF@dpg-d0i7an2dbo4c73djihn0-a.oregon-postgres.render.com/tools_project_api')
+
+# Configure the DATABASES setting using dj_database_url
 DATABASES = {
     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
