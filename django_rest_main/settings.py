@@ -20,7 +20,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'corsheaders',  # added
+    'corsheaders', 
+    'cloudinary',
+    'cloudinary_storage', # added
     'students',
     'API',
 ]
@@ -93,3 +95,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS = True
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dza2rlywk',
+    'API_KEY': '124289597836564',
+    'API_SECRET': 'bLNx_qYDRpsScgJ2he3jDSsiXR8',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
